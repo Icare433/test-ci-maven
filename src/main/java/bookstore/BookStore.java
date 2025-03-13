@@ -36,6 +36,13 @@ public class BookStore {
 	}
 
 
+	public List<Book> getBooksByPublicationYear(int year) {
+		return this.collection.stream()
+			.filter(b -> b.getPublicationYear() == year)
+			.collect(Collectors.toList());
+	}
+
+
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(String.format("Book store \"%s\"\n", this.name));
